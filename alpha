@@ -9,9 +9,6 @@ import openpyxl
 import win32com.client as win32
 import datetime
 
-#Open csv file
-#need to find a way to create this file and make name match wo number as input by user
-#need to create a folder on desktop where all these files go but not overwrite existing folder/files
 
 class gui:
     def selectEvent():  #User selects file to parse
