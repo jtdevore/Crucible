@@ -9,6 +9,9 @@ import openpyxl
 import win32com.client as win32
 import datetime
 
+#Open csv file
+#need to find a way to create this file and make name match wo number as input by user
+#need to create a folder on desktop where all these files go but not overwrite existing folder/files
 
 class gui:
     def selectEvent():  #User selects file to parse
@@ -20,7 +23,7 @@ class gui:
         tree = ET.parse(path.filename)#this is where the file location to be parsed goes
         root = tree.getroot()
         
-    def callWO(): #This opens an input text gui for user to input wo number and converts it to the variable woNumber for later use.
+    def callWO(): #This opens an input text gui for user to input wo number and converts it to the variable woCell for later use.
         root = Tk()
         root.withdraw()
         woCell = tkinter.simpledialog.askstring("Enter WO #", "Enter WO Number")
@@ -48,6 +51,12 @@ class gui:
         root.withdraw()
         truckCell = tkinter.simpledialog.askstring("Enter Truck  Number", "Enter Truck number")
         print (truckCell)
+
+    def repairTimeS(): #Stores user input variable repairSdate for later use
+        root = Tk()
+        root.withdraw()
+        repairSdate = tkinter.simpledialog.askstring("Enter Truck  Number", "Enter Truck number")
+        print (repairSdate)
 
 gui.selectEvent()                
 gui.callWO()
